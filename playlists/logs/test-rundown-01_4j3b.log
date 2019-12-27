@@ -1,0 +1,6 @@
+[2019-11-30 11:30:25,806] [INFO]  Open: ../playlists/json/test-rundown-01_4j3b.json
+[2019-11-30 11:30:25,838] [INFO]  Index: "0" Node: "{'begin': '0:00:00.000', 'duration': 280.22, 'in': 0, 'out': 280.22, 'source': '/mnt/kurrenttv_01/media.dir/movies/open_source_explained.mov'}"
+[2019-11-30 11:30:25,839] [INFO]  Play: "/mnt/kurrenttv_01/media.dir/movies/open_source_explained.mov"
+[2019-11-30 11:31:07,087] [INFO]  Open: ../playlists/json/test-rundown-01_4j3b.json
+[2019-11-30 11:31:07,116] [INFO]  Index: "0" Node: "{'begin': '0:00:00.000', 'duration': 280.22, 'in': 0, 'out': 280.22, 'source': '/mnt/kurrenttv_01/media.dir/movies/open_source_explained.mov'}"
+[2019-11-30 11:31:07,116] [INFO]  Play: "/mnt/kurrenttv_01/media.dir/movies/open_source_explained.mov"

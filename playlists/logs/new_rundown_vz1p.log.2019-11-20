@@ -1,0 +1,18 @@
+[2019-11-20 17:54:04,003] [INFO]  Overlay text file: "../playlists/text/new_rundown_vz1p.txt"
+[2019-11-20 17:54:04,004] [INFO]  Open: ../playlists/json/new_rundown_vz1p.json
+[2019-11-20 17:54:04,175] [INFO]  Index: "0" Node: "{'begin': '0:00:00.000', 'duration': 572.61, 'in': 0, 'out': 572.61, 'source': '/mnt/kurrenttv_01/media.dir/movies/big_buck_bunny.mov'}"
+[2019-11-20 17:54:04,175] [INFO]  Play: "/mnt/kurrenttv_01/media.dir/movies/big_buck_bunny.mov"
+[2019-11-20 17:58:13,922] [INFO]  Overlay text file: "../playlists/text/new_rundown_vz1p.txt"
+[2019-11-20 17:58:13,924] [INFO]  Open: ../playlists/json/new_rundown_vz1p.json
+[2019-11-20 17:58:13,953] [INFO]  Index: "0" Node: "{'begin': '0:00:00.000', 'duration': 572.61, 'in': 0, 'out': 572.61, 'source': '/mnt/kurrenttv_01/media.dir/movies/big_buck_bunny.mov'}"
+[2019-11-20 17:58:13,954] [INFO]  Play: "/mnt/kurrenttv_01/media.dir/movies/big_buck_bunny.mov"
+[2019-11-20 18:10:03,186] [INFO]  Overlay text file: "../playlists/text/new_rundown_vz1p.txt"
+[2019-11-20 18:10:03,187] [INFO]  Open: ../playlists/json/new_rundown_vz1p.json
+[2019-11-20 18:10:03,221] [INFO]  Index: "0" Node: "{'begin': '0:00:00.000', 'duration': 572.61, 'in': 0, 'out': 572.61, 'source': '/mnt/kurrenttv_01/media.dir/movies/big_buck_bunny.mov'}"
+[2019-11-20 18:10:03,221] [INFO]  Play: "/mnt/kurrenttv_01/media.dir/movies/big_buck_bunny.mov"
+[2019-11-20 18:13:05,472] [INFO]  Overlay text file: "../playlists/text/new_rundown_vz1p.txt"
+[2019-11-20 18:13:05,477] [INFO]  Open: ../playlists/json/new_rundown_vz1p.json
+[2019-11-20 18:13:05,603] [INFO]  Index: "0" Node: "{'begin': '0:00:00.000', 'duration': 572.61, 'in': 0, 'out': 572.61, 'source': '/mnt/kurrenttv_01/media.dir/movies/big_buck_bunny.mov'}"
+[2019-11-20 18:13:05,603] [INFO]  Play: "/mnt/kurrenttv_01/media.dir/movies/big_buck_bunny.mov"
+[2019-11-20 18:13:06,694] [ERROR]  [decoder] av_interleaved_write_frame(): Broken pipe 
+[2019-11-20 18:13:06,712] [ERROR]  Broken Pipe!
