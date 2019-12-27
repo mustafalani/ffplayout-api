@@ -198,7 +198,6 @@ def StopPlaylist():
         playlist_stop_cmd = "playlistcpid=$(ps -ef | grep '" + playlist +"' | grep -v 'grep' | awk '{print $2}');kill -9 $playlistcpid"
         subprocess.Popen(playlist_stop_cmd, shell=True)
         return jsonify('playlist stopeed'), 200
-        #return jsonify(playlistpid), 200
 
 # get playlist status
 @app.route('/api/v1/playlist/status', methods=['GET'])
@@ -209,7 +208,6 @@ def GetPlaylistStatus():
         if not os.path.isfile('../playlists/config/' + playlist + '.conf'):
             return make_response(jsonify('Not Found'), 404)
         playlist_status_cmd = "playlistcpid=$(ps -ef | grep '" + playlist +"' | grep -v 'grep' | awk '{print $2}');echo $playlistcpid"
-        #index_status = "grep 'Index' ../playlists/logs/" + playlist + ".log | tail -1 | cut -c1-45"
         playlist_status = subprocess.Popen(playlist_status_cmd, shell=True, stdout=subprocess.PIPE)
         playlistlogfile = "../playlists/logs/" + playlist + ".log"
         def tail(file, n=1, bs=1024):
@@ -227,13 +225,11 @@ def GetPlaylistStatus():
             lines = f.readlines()[-l:]
             f.close()
             return lines
-        #nowIndex = subprocess.Popen(index_status, shell=True, stdout=subprocess.PIPE)
         lines = tail(playlistlogfile, 2)
         for line in lines:
             if "Index" in line:
                 Index = line
         (output, err) = playlist_status.communicate()
-        #(Index, err) = nowIndex.communicate()
         if output and output.strip():
             return jsonify('Online', Index), 200
         return jsonify('Offline'), 200

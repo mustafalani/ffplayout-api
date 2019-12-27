@@ -1,4 +1,0 @@
-[2019-11-30 15:48:33,759] [INFO]  Overlay text file: "../playlists/text/new_rundown_vz1p.txt"
-[2019-11-30 15:48:33,761] [INFO]  Open: ../playlists/json/new_rundown_vz1p.json
-[2019-11-30 15:48:33,792] [INFO]  Index: "0" Node: "{'begin': '0:00:00.000', 'duration': 572.61, 'in': 0, 'out': 572.61, 'source': '/mnt/kurrenttv_01/media.dir/movies/big_buck_bunny.mov'}"
-[2019-11-30 15:48:33,792] [INFO]  Play: "/mnt/kurrenttv_01/media.dir/movies/big_buck_bunny.mov"

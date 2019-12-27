@@ -1,8 +1,0 @@
-[2019-11-24 11:39:37,337] [INFO]  Overlay text file: "../playlists/text/fffff_j95e.txt"
-[2019-11-24 11:39:37,339] [INFO]  Open: ../playlists/json/fffff_j95e.json
-[2019-11-24 11:39:37,397] [INFO]  Index: "0" Node: "{'begin': '0:00:00.000', 'duration': 166.4, 'in': 0, 'out': 166.4, 'source': '/mnt/kurrenttv_01/media.dir/movies/fsf_30.mov'}"
-[2019-11-24 11:39:37,398] [INFO]  Play: "/mnt/kurrenttv_01/media.dir/movies/fsf_30.mov"
-[2019-11-24 14:18:01,707] [INFO]  Overlay text file: "../playlists/text/fffff_j95e.txt"
-[2019-11-24 14:18:01,710] [INFO]  Open: ../playlists/json/fffff_j95e.json
-[2019-11-24 14:18:01,778] [INFO]  Index: "0" Node: "{'begin': '0:00:00.000', 'duration': 166.4, 'in': 0, 'out': 166.4, 'source': '/mnt/kurrenttv_01/media.dir/movies/fsf_30.mov'}"
-[2019-11-24 14:18:01,778] [INFO]  Play: "/mnt/kurrenttv_01/media.dir/movies/fsf_30.mov"

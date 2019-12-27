@@ -124,7 +124,7 @@ def main():
     preview using ffmpeg
 
     """
-ffplayout_preview = 'ffmpeg -hide_banner -nostats -f ' + inout_type + ' -i ' + "'" + (socket.gethostname()).upper() + ' ('+ preview_input + ")' " + output_settings + ' -f ' + output_type + " 'rtmp://152.115.45.140:1935/rundowns/" + preview_output + "-preview'"
+ffplayout_preview = 'ffmpeg -hide_banner -nostats -f ' + inout_type + ' -i ' + "'" + (socket.gethostname()).upper() + ' ('+ preview_input + ")' " + output_settings + ' -f ' + output_type + " 'rtmp://127.0.0.1:1935/rundowns/" + preview_output + "-preview'"
 subprocess.Popen(ffplayout_preview, shell=True)
 if __name__ == '__main__':
     main()
