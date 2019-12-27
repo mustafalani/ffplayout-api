@@ -41,8 +41,8 @@ def index():
 def getDefaultConfig():
         config = configparser.ConfigParser()
         config.read('../ffplayout.conf')
-        log_path = config.get("LOGGING", "log_file")
-        text = config.get("TEXT", "textfile")
+        log_path = config.get("LOGGING", "log_path")
+        text = config.get("TEXT", "add_text")
         logo = config.get("PRE_COMPRESS", "logo")
         out = config.get("OUT","out_addr")
         return jsonify("default settings","log_path:",log_path,"output name:",out,"text file:",text,"logo:",logo)
@@ -57,8 +57,8 @@ def getPlaylistConfig():
         if not os.path.isfile('../playlists/config/' + playlist + '.conf'):
             return make_response(jsonify('Not Found'), 404)
         config.read('../playlists/config/' + playlist + '.conf')
-        log_path = config.get("LOGGING", "log_file")
-        text = config.get("TEXT", "textfile")
+        log_path = config.get("LOGGING", "log_path")
+        text = config.get("TEXT", "add_text")
         logo = config.get("PRE_COMPRESS", "logo")
         logo_opacity = config.get("PRE_COMPRESS", "logo_opacity")
         out = config.get("OUT","out_addr")
@@ -86,7 +86,7 @@ def addPlaylistConfig():
         config = configparser.ConfigParser()
         config.read('../ffplayout.conf')
         # set variables
-        config.set('LOGGING', 'log_file', '../playlists/logs/' + playlist + '.log')
+        config.set('LOGGING', 'log_path', '../playlists/logs/' + playlist + '.log')
         config.set('TEXT', 'textfile', '../playlists/text/' + playlist + '.txt')
         config.set('PRE_COMPRESS', 'logo', '../playlists/logos/' + playlist + '.png')
         config.set('OUT', 'out_addr', playlist)
@@ -110,7 +110,7 @@ def updatePlaylistConfig():
         config = configparser.ConfigParser()
         config.read('../playlists/config/' + current_playlist + '.conf')
         # set variables
-        config.set('LOGGING', 'log_file', '../playlists/logs/'+ new_playlist + '.log')
+        config.set('LOGGING', 'log_path', '../playlists/logs/'+ new_playlist + '.log')
         config.set('TEXT', 'textfile', '../playlists/text/'+ new_playlist + '.txt')
         config.set('PRE_COMPRESS', 'logo', '../playlists/logos/' + new_playlist + '.png')
         config.set('OUT', 'out_addr', new_playlist)
