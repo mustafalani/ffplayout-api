@@ -1,4 +1,4 @@
-#!/home/iohub/ffplayout-engine/websocket/logviewer/.virtualenv/bin/python3
+#!/opt/ffplayout-engine/websocket/logviewer/.virtualenv/bin/python3
 # EASY-INSTALL-ENTRY-SCRIPT: 'ansi2html==1.2.0','console_scripts','ansi2html'
 __requires__ = 'ansi2html==1.2.0'
 import re

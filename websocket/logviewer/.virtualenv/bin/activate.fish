@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/iohub/ffplayout/websocket/logviewer/.virtualenv"
+set -gx VIRTUAL_ENV "/opt/ffplayout/websocket/logviewer/.virtualenv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
