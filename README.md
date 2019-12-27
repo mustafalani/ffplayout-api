@@ -135,3 +135,38 @@ sudo systemctl start ffplayout-api-websocket.service
 
 sudo systemctl status ffplayout-api-websocket.service
 ```
+
+configure nginx
+----------------------------
+sudo mkdir /var/www/ffplayout
+
+sudo nano /var/www/ffplayout/http.conf
+
+
+```
+server {
+    listen 8085;
+    server_name localhost;
+
+    location / {
+        include uwsgi_params;
+        uwsgi_pass unix:/opt/ffplayout/api/ffplayout_api.sock;
+    }
+}
+server {
+    listen                      8865 ssl;
+    listen                      [::]:8865 ssl;
+
+    ssl_certificate             /etc/letsencrypt/live/ott-pl-02.iohub.live/fullchain.pem;
+    ssl_certificate_key         /etc/letsencrypt/live/ott-pl-02.iohub.live/privkey.pem;
+    ssl_trusted_certificate     /etc/letsencrypt/live/ott-pl-02.iohub.live/chain.pem;
+
+    location / {
+      proxy_pass  http://127.0.0.1:8864;
+      proxy_http_version 1.1;
+      proxy_set_header Upgrade $http_upgrade;
+      proxy_set_header Connection "upgrade";
+
+         }
+}
+```
