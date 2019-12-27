@@ -33,9 +33,11 @@ The following folders must be placed in the root directory of ffplayout
 Installation
 ------------
 
+sudo apt-get install python-dev
+sudo apt-get install python-pip
+sudo pip install uwsgi
+
 ./ve python server.py --host 127.0.0.1 --port 8864 --prefix /opt/ffplayout/playlists/logs/
-
-
 
 Run ffplayout-api as a service
 ------------------------------
