@@ -33,7 +33,7 @@ The following folders must be placed in the root directory of ffplayout
 Installation
 ------------
 
-./ve python server.py --host 152.115.45.138 --port 8864 --prefix /home/iohub/ffplayout/playlists/logs/
+./ve python server.py --host 152.115.45.138 --port 8864 --prefix /opt/ffplayout/playlists/logs/
 
 
 
@@ -50,9 +50,9 @@ Description=uWSGI instance to serve ffplayout api
 After=network.target
 
 [Service]
-WorkingDirectory=/home/iohub/ffplayout/api/
-Environment="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/iohub/ffplayout/api/flask/bin"
-ExecStart=/home/iohub/ffplayout/api/flask/bin/uwsgi --ini ffplayout_api.ini
+WorkingDirectory=/opt/ffplayout/api/
+Environment="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/ffplayout/api/flask/bin"
+ExecStart=/opt/ffplayout/api/flask/bin/uwsgi --ini ffplayout_api.ini
 User=root
 Group=www-data
 
