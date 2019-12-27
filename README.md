@@ -34,7 +34,9 @@ Installation
 ------------
 
 sudo apt-get install python-dev
+
 sudo apt-get install python-pip
+
 sudo pip install uwsgi
 
 ./ve python server.py --host 127.0.0.1 --port 8864 --prefix /opt/ffplayout/playlists/logs/
@@ -61,3 +63,10 @@ Group=www-data
 [Install]
 WantedBy=multi-user.target
 ```
+sudo systemctl daemon-reload
+
+sudo systemctl enable ffplayout-api.service
+
+sudo systemctl start ffplayout-api.service
+
+sudo systemctl status ffplayout-api.service
