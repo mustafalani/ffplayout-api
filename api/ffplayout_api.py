@@ -40,7 +40,7 @@ def index():
 @app.route('/api/v1/config', methods=['GET'])
 def getDefaultConfig():
         config = configparser.ConfigParser()
-        config.read('../ffplayout.conf')
+        config.read('./ffplayout.conf')
         log_path = config.get("LOGGING", "log_path")
         text = config.get("TEXT", "add_text")
         logo = config.get("PRE_COMPRESS", "logo")
@@ -84,7 +84,7 @@ def addPlaylistConfig():
         if not os.path.isdir('../playlists/json'):
                 os.makedirs('../playlists/json')
         config = configparser.ConfigParser()
-        config.read('../ffplayout.conf')
+        config.read('./ffplayout.conf')
         # set variables
         config.set('LOGGING', 'log_path', '../playlists/logs/' + playlist + '/')
         config.set('TEXT', 'textfile', '../playlists/text/' + playlist + '.txt')
