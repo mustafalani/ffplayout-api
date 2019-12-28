@@ -79,14 +79,14 @@ def addPlaylistConfig():
                 os.makedirs('../playlists/text')
         if not os.path.isdir('../playlists/logos'):
                 os.makedirs('../playlists/logos')
-        if not os.path.isdir('../playlists/logs'):
-                os.makedirs('../playlists/logs')
+        if not os.path.isdir('../playlists/logs/' + playlist):
+                os.makedirs('../playlists/logs/'+ playlist)
         if not os.path.isdir('../playlists/json'):
                 os.makedirs('../playlists/json')
         config = configparser.ConfigParser()
         config.read('../ffplayout.conf')
         # set variables
-        config.set('LOGGING', 'log_path', '../playlists/logs/' + playlist + '.log')
+        config.set('LOGGING', 'log_path', '../playlists/logs/' + playlist + '/')
         config.set('TEXT', 'textfile', '../playlists/text/' + playlist + '.txt')
         config.set('PRE_COMPRESS', 'logo', '../playlists/logos/' + playlist + '.png')
         config.set('OUT', 'out_addr', playlist)
@@ -110,7 +110,7 @@ def updatePlaylistConfig():
         config = configparser.ConfigParser()
         config.read('../playlists/config/' + current_playlist + '.conf')
         # set variables
-        config.set('LOGGING', 'log_path', '../playlists/logs/'+ new_playlist + '.log')
+        config.set('LOGGING', 'log_path', '../playlists/logs/'+ new_playlist + '/')
         config.set('TEXT', 'textfile', '../playlists/text/'+ new_playlist + '.txt')
         config.set('PRE_COMPRESS', 'logo', '../playlists/logos/' + new_playlist + '.png')
         config.set('OUT', 'out_addr', new_playlist)
@@ -122,7 +122,7 @@ def updatePlaylistConfig():
         Path('../playlists/text/' + new_playlist + '.txt').touch()
         os.remove('../playlists/config/' + current_playlist + '.conf')
         os.rename(r'../playlists/text/' + current_playlist + '.txt',r'../playlists/text/' + new_playlist + '.txt')
-        os.rename(r'../playlists/logs/' + current_playlist + '.log',r'../playlists/logs/' + new_playlist + '.log')
+        os.rename(r'../playlists/logs/' + current_playlist + '.log',r'../playlists/logs/' + new_playlist)
         os.rename(r'../playlists/logos/' + current_playlist + '.png',r'../playlists/logos/' + new_playlist + '.png')
         os.rename(r'../playlists/json/' + current_playlist + '.json',r'../playlists/json/' + new_playlist + '.json')
         return jsonify('playlist configuration updated'), 201
@@ -135,7 +135,7 @@ def deletePlaylistConfig():
         playlist = request.json['playlistid']
         os.remove('../playlists/config/' + playlist + '.conf')
         os.remove('../playlists/text/' + playlist + '.txt')
-        os.remove('../playlists/logs/' + playlist + '.log')
+        os.remove('../playlists/logs/' + playlist)
         os.remove('../playlists/logos/' + playlist + '.png')
         os.remove('../playlists/json/' + playlist + '.json')
         return jsonify('playlist removed'), 200
@@ -209,7 +209,7 @@ def GetPlaylistStatus():
             return make_response(jsonify('Not Found'), 404)
         playlist_status_cmd = "playlistcpid=$(ps -ef | grep '" + playlist +"' | grep -v 'grep' | awk '{print $2}');echo $playlistcpid"
         playlist_status = subprocess.Popen(playlist_status_cmd, shell=True, stdout=subprocess.PIPE)
-        playlistlogfile = "../playlists/logs/" + playlist + ".log"
+        playlistlogfile = "../playlists/logs/" + playlist + "/ffplayout.log"
         def tail(file, n=1, bs=1024):
             f = open(file)
             f.seek(0,2)
