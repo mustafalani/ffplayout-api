@@ -95,7 +95,6 @@ def addPlaylistConfig():
                 config.write(configfile)
                 configfile.close()
         Path('../playlists/text/' + playlist + '.txt').touch()
-        Path('../playlists/logs/' + playlist + '.log').touch()
         Path('../playlists/json/' + playlist + '.json').touch()
         copyfile('../logo.png', '../playlists/logos/' + playlist + '.png')
         return jsonify('playlist configuration saved'), 201
@@ -118,11 +117,10 @@ def updatePlaylistConfig():
         with open('../playlists/config/' + new_playlist + '.conf', 'w') as configfile:
                 config.write(configfile)
                 configfile.close()
-        Path('../playlists/logs/' + new_playlist + '.log').touch()
         Path('../playlists/text/' + new_playlist + '.txt').touch()
         os.remove('../playlists/config/' + current_playlist + '.conf')
         os.rename(r'../playlists/text/' + current_playlist + '.txt',r'../playlists/text/' + new_playlist + '.txt')
-        os.rename(r'../playlists/logs/' + current_playlist + '.log',r'../playlists/logs/' + new_playlist)
+        os.rename(r'../playlists/logs/' + current_playlist ,r'../playlists/logs/' + new_playlist)
         os.rename(r'../playlists/logos/' + current_playlist + '.png',r'../playlists/logos/' + new_playlist + '.png')
         os.rename(r'../playlists/json/' + current_playlist + '.json',r'../playlists/json/' + new_playlist + '.json')
         return jsonify('playlist configuration updated'), 201
@@ -135,7 +133,7 @@ def deletePlaylistConfig():
         playlist = request.json['playlistid']
         os.remove('../playlists/config/' + playlist + '.conf')
         os.remove('../playlists/text/' + playlist + '.txt')
-        os.remove('../playlists/logs/' + playlist)
+        shutil.rmtree('../playlists/logs/' + playlist)
         os.remove('../playlists/logos/' + playlist + '.png')
         os.remove('../playlists/json/' + playlist + '.json')
         return jsonify('playlist removed'), 200
